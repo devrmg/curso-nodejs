@@ -20,6 +20,11 @@ function div(a,b){
 }
 console.log(div(5,2));
 
+
+var resultado  = div(200,40);
+console.log(resultado);
+
+
 module.exports = {
     soma,
     mult,
