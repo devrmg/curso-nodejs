@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  1 - Gerar um relógio em tempo real
+
+<script type="text/javascript">
+function startTime()
+{
+var today=new Date();
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+// add a zero in front of numbers<10
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+t=setTimeout('startTime()',500);
+
+}
+
+function checkTime(i)
+{
+if (i<10)
+  {
+  i="0" + i;
+  }
+return i;
+}
+</script>
+
+
+<div id="txt">
+<script type="text/javascript">document.write(startTime())</script>
+</div>
+2 - Inputs modificando após clique
+
+<input type="text" value="usuario" onblur="if(this.value == ''){ this.value='usuario';}" onfocus="if(this.value == 'usuario'){ this.value='';}"/>
+<input value="senha" onblur="if(this.value == ''){ this.value='senha'; this.type='text';}" onfocus="if(this.value == 'senha'){ this.value=''; this.type='password';}"/>
+3 - Pegar a URL <br>
+
+<script>document.write(window.location.href);</script><br>
+4 - Encontar uma palavra numa String (case sensitive)
+
+<script>
+var str = 'Terminal Root';
+
+if(str.match(/Root/)){
+  document.write('Encontrou');
+}else{
+	document.write('Palavra Não Encontrada');
+}
+</script><br>
+5 - Retirar os 5 últimos caracteres e adicionar uma nova palavra
+
+<script>
+var str = 'Terminal Root';
+
+var str = str.slice(0, -5)+' Bash';
+
+document.write(str);
+
+</script><br>
+6 -Substituir palavra numa string
+
+<script>
+var str = 'Terminal Root';
+var str = str.replace("Root", "Linux");
+document.write(str);
+</script><br>
+7 - Redirecionamento (tem que inciar com http://)
+
+<!-- <script>window.location = "http://www.terminalroot.com.br";</script>-->
+8 - Abrir Pop-Up no Centro da Página
+
+<script>
+	var win = null;
+	function NovaJanela(pagina,nome,w,h,scroll){
+	LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+	TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+	settings = 'location=no,toolbar=no,directories=no,status=no,height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable';
+	win = window.open(pagina,nome,settings);
+	}
+</script><br>
+
+
+<!-- <a href="http://www.terminalroot.com.br/" onclick="NovaJanela(this.href,'nomeJanela','820','560','yes');return false">Abrir Pop-Up</a>-->
+9 - Mostrar a Data
+
+<script type="text/javascript">document.write(Date());</script>
+10 - Atrasando o tempo
+
+<script type="text/javascript">
+
+function timeMsg(){
+	var t=setTimeout("alertMsg()",3000);
+}
+
+function alertMsg(){
+	document.write("Terminal Root");
+}
+
+</script><br>
+
+
+<a href="#" onClick="timeMsg()">Clique aqui a mensagem só aparecerá depois de 3 segundos</a>
+</body>
+</html>
